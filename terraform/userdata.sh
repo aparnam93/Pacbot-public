@@ -36,3 +36,6 @@ cp /opt/pacbot/installer/settings/default.local.py  /opt/pacbot/installer/settin
 
 ng serve &>/dev/null
 
+python3.7 /opt/pacbot/installer/manager.py status > /opt/pacbot/installer/log/Output.log
+
+
