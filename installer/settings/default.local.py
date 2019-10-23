@@ -1,9 +1,9 @@
 # CRAETE local.py file by renaming/copying default.local.py
 # User should update the VPC details below in local.py
 VPC = {
-    "ID": "vpc-1",
-    "CIDR_BLOCKS": ["10.0.0.0/16"],
-    "SUBNETS": ["subnet-1", "subnet-2"]
+    "ID": "vpc-07f81c6ecd24526e8",
+    "CIDR_BLOCKS": ["172.26.0.0/16"],
+    "SUBNETS": ["subnet-00f6241c98bc8a331", "subnet-06872e9fe10625220"]
 }
 
 
