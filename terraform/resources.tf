@@ -33,7 +33,7 @@ EOF
 
 resource "aws_iam_instance_profile" "pacbot_ec2_instance_profile" {
   name = "ec2_pacbot_instance_profile"
-  role = "${aws_iam_role.pacbot_server_role.name}"
+  role = "${aws_iam_role.pacbot_ec2_server_role.name}"
 }
 resource "aws_iam_role_policy" "pacbot_ec2_server_policy" {
   name = "pacbot_ec2_server_policy"
