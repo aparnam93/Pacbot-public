@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Run pacbot Application') {
       steps {
-        echo 'Running pacbot application installer file'
+        echo 'Running pacbot application installer file...'
       }
     }
   }
