@@ -21,3 +21,34 @@ variable "subnetId" {
   description = "Subnet Id for instance"
   default = "subnet-00f6241c98bc8a331"
 }
+variable "hostname_tag" {
+  default = "Pacbot_Installer_Server"
+}
+variable "BusinessUnit" {
+  default = "GNA"
+}
+variable "CostCenter" {
+  default = "0512"
+}
+
+variable "Environment" {
+  default = "DEV"
+}
+
+variable "SysOwner" {
+  default = "rakesh.singh@regeneron.com"
+}
+variable "SysName" {
+  default = "PacBot"
+}
+
+variable "Department" {
+  default = "Technology Enablement"
+}
+
+variable "tsm" {
+  default = "sanjay.sreeram1@regeneron.com"
+}
+variable "PatchGroup" {
+ default = "cat3"
+}
