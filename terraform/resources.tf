@@ -23,7 +23,7 @@ resource "aws_instance" "pacbot-server" {
 }
 
 resource "aws_eip" "lb" {
-  instance = "${aws_instance.server.id}"
+  instance = "${aws_instance.pacbot-server.id}"
   vpc      = true
 }
 
