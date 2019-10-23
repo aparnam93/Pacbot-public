@@ -1,16 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('development-branch') {
+    stage('Build Infrastructure') {
       steps {
-        echo 'run this stage - ony if the branch = development branch'
-         sh 'echo Building ${BRANCH_NAME}...'
+        echo 'Building your infrastructure'
+		    sh 'terraform --version'
       }
     }
-    stage('testing') {
+    stage('Run pacbot Application') {
       steps {
-        echo 'run this stage - ony if the branch = master branch'
-         sh 'echo Building ${BRANCH_NAME}...'
+        echo 'Running pacbot application installer file'
       }
     }
   }
