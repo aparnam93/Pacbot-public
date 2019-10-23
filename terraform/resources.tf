@@ -9,7 +9,7 @@ resource "aws_instance" "pacbot_server" {
      Name = "Pacbot-server"
    }
 }
-
+/*
 resource "aws_iam_role" "pacbot_server_role" {
   name = "pacbot_server_role"
 
@@ -66,3 +66,4 @@ resource "aws_iam_role_policy" "pacbot_server_policy" {
 }
 EOF
 }
+*/
