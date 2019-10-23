@@ -9,25 +9,15 @@ variable "ami" {
 
 variable "key-pair" {
   description = "Ec2 instance Key pair"
-  default = "ec2-creation-dev"
+  default = "pacbot-application"
 }
 
 variable "VPCID" {
   description = "VPC Id for instance"
-  default = "vpc-78fb0803"
+  default = "vpc-07f81c6ecd24526e8"
 }
 
 variable "subnetId" {
   description = "Subnet Id for instance"
-  default = "subnet-b28a83f9"
-}
-
-variable "s3BucketName" {
-  description = "S3 bucket name to store state file"
-  default = "terraform-state-storage-s3"
-}
-
-variable "StateLockDbName" {
-  description = "DB Name which store the state lock"
-  default = "terraform-aws-tf-state-store-lock"
+  default = "subnet-00f6241c98bc8a331"
 }
