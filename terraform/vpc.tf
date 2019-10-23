@@ -1,6 +1,6 @@
 # Define the security group for public subnet
 resource "aws_security_group" "sgweb" {
-  name = "jenkins_server_security_group"
+  name = "pacbot_server_security_group"
   description = "Allow incoming HTTP connections & SSH access"
 
  ingress {
