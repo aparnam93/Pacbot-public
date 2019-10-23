@@ -13,7 +13,7 @@ echo alias pip3=pip3.7 >> ~/.bashrc
 source ~/.bashrc
 
 #Clone Repo
-git clone https://github.com/tmobile/pacbot.git
+https://github.com/aparnam93/Pacbot-public.git
 
 #Other Prereqs
 yum -y install java-1.8.0-openjdk docker maven unzip mysql
