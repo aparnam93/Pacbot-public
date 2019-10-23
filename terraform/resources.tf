@@ -5,7 +5,11 @@ resource "aws_instance" "pacbot_server" {
    subnet_id = "${var.subnetId}"
    vpc_security_group_ids = ["${aws_security_group.sgweb.id}"]
    user_data = "${file("userdata.sh")}"
+   tags {
+     Name = "Pacbot-server"
+   }
 }
+
 resource "aws_iam_role" "pacbot_server_role" {
   name = "pacbot_server_role"
 
@@ -27,7 +31,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "pacbot_instance_profile" {
-  name = "pacbot_instance_profile"
+  name = "ec2_instance_profile"
   role = "${aws_iam_role.pacbot_server_role.name}"
 }
 resource "aws_iam_role_policy" "pacbot_server_policy" {
