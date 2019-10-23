@@ -4,12 +4,13 @@ resource "aws_instance" "pacbot_server" {
    key_name = "${var.key-pair}"
    subnet_id = "${var.subnetId}"
    vpc_security_group_ids = ["${aws_security_group.sgweb.id}"]
+   iam_instance_profile = "${aws_iam_instance_profile.pacbot_instance_profile.name}"
    user_data = "${file("userdata.sh")}"
    tags {
      Name = "Pacbot-server"
    }
 }
-/*
+
 resource "aws_iam_role" "pacbot_server_role" {
   name = "pacbot_server_role"
 
@@ -66,4 +67,3 @@ resource "aws_iam_role_policy" "pacbot_server_policy" {
 }
 EOF
 }
-*/
