@@ -6,9 +6,17 @@ resource "aws_instance" "pacbot_server" {
    vpc_security_group_ids = ["${aws_security_group.sgweb.id}"]
    iam_instance_profile = "${aws_iam_instance_profile.pacbot_ec2_instance_profile.name}"
    user_data = "${file("userdata.sh")}"
-   tags {
-     Name = "Pacbot-server"
-   }
+   tags = {
+    Name = "${var.hostname_tag}"
+    BusinessUnit = "${var.BusinessUnit}"
+    CostCenter = "${var.CostCenter}"
+    Environment = "${var.Environment}"
+    SysOwner = "${var.SysOwner}"
+    SysName  = "${var.SysName}"
+    Department = "${var.Department}"
+    TSM = "${var.tsm}"
+    "/Patch Group/" = "${var.PatchGroup}"
+  }
 }
 
 resource "aws_iam_role" "pacbot_ec2_server_role" {
