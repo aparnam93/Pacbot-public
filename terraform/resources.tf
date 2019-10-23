@@ -7,8 +7,3 @@ resource "aws_instance" "pacbot_server" {
    user_data = "${file("userdata.sh")}"
 }
 
-
-resource "aws_eip" "lb" {
-  instance = "${aws_instance.pacbot_server.id}"
-  vpc      = true
-}
