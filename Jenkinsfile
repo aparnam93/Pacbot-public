@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Building your infrastructure'
 		sh 'terraform --version'
-		sh '/var/lib/jenkins/workspace/t-github-multibranch_development/terraform'
+		sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform'
 		sh 'terraform apply'		
       }
     }
