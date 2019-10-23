@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Building your infrastructure'
 		sh 'terraform --version'
-		sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform/ && terraform init && terraform destroy -lock=false -auto-approve'
+		sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform/ && terraform init && terraform apply -lock=false -auto-approve'
       }
     }
     stage('Run pacbot Application') {
