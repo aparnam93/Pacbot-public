@@ -5,9 +5,7 @@ pipeline {
       steps {
         echo 'Building your infrastructure'
 		sh 'terraform --version'
-		sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform/'
-		sh 'pwd'
-		sh 'terraform apply'		
+		sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform/ && terraform apply'
       }
     }
     stage('Run pacbot Application') {
