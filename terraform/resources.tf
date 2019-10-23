@@ -4,15 +4,15 @@ resource "aws_instance" "pacbot_server" {
    key_name = "${var.key-pair}"
    subnet_id = "${var.subnetId}"
    vpc_security_group_ids = ["${aws_security_group.sgweb.id}"]
-   iam_instance_profile = "${aws_iam_instance_profile.pacbot_instance_profile.name}"
+   iam_instance_profile = "${aws_iam_instance_profile.pacbot_ec2_instance_profile.name}"
    user_data = "${file("userdata.sh")}"
    tags {
      Name = "Pacbot-server"
    }
 }
 
-resource "aws_iam_role" "pacbot_server_role" {
-  name = "pacbot_server_role"
+resource "aws_iam_role" "pacbot_ec2_server_role" {
+  name = "pacbot_ec2_server_role"
 
   assume_role_policy = <<EOF
 {
@@ -31,13 +31,13 @@ resource "aws_iam_role" "pacbot_server_role" {
 EOF
 }
 
-resource "aws_iam_instance_profile" "pacbot_instance_profile" {
-  name = "pacbot_ec2_instance_profile"
+resource "aws_iam_instance_profile" "pacbot_ec2_instance_profile" {
+  name = "ec2_pacbot_instance_profile"
   role = "${aws_iam_role.pacbot_server_role.name}"
 }
-resource "aws_iam_role_policy" "pacbot_server_policy" {
-  name = "pacbot_server_policy"
-  role = "${aws_iam_role.pacbot_server_role.id}"
+resource "aws_iam_role_policy" "pacbot_ec2_server_policy" {
+  name = "pacbot_ec2_server_policy"
+  role = "${aws_iam_role.pacbot_ec2_server_role.id}"
 
   policy = <<EOF
 {
