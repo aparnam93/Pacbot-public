@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build Infrastructure') {
 	    when {
-            expression { params.InfraChange == 'true' }
+            expression { params.InfraChange == true }
         }
       steps {
         echo 'Building your infrastructure'
@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Run pacbot Application') {
        when {
-            expression { params.PacbotInstall == 'true' }
+            expression { params.PacbotInstall == true }
        }
        steps {
             echo 'Running pacbot application installer file...'
