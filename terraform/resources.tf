@@ -75,3 +75,7 @@ resource "aws_iam_role_policy" "pacbot_ec2_server_policy" {
 }
 EOF
 }
+
+output "instance_ip_addr" {
+  value = aws_instance.pacbot_server.private_ip
+}
