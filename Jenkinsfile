@@ -1,7 +1,8 @@
 pipeline {
   agent any
   parameters {
-    booleanParam(name: 'InfraChange' , defaultValue: false )
+    booleanParam(name: 'InfraChange' , defaultValue: false ),
+    booleanParam(name: 'PacbotInstall' , defaultValue: false )
   }
   stages {
     stage('Build Infrastructure') {
