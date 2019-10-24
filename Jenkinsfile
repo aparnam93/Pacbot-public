@@ -22,6 +22,7 @@ pipeline {
        }
        steps {
             echo 'Running pacbot application installer file...'
+	    sh 'whoami'
 	    sh 'sudo ssh -i /home/ec2-user/key.pem ec2-user@172.26.10.190 "sudo su && python3 /opt/pacbot/installer/manager.py status"'
        }
     }
