@@ -1,20 +1,34 @@
 pipeline {
-    agent any
-    parameters {
-        choice(
-            choices: ['greeting' , 'silence'],
-            description: '',
-            name: 'REQUESTED_ACTION')
-    }
-    stages {
-        stage ('Speak') {
-            when {
-                // Only say hello if a "greeting" is requested
-                expression { params.REQUESTED_ACTION == 'greeting' }
-            }
-            steps {
-                echo "Hello, bitwiseman!"
-            }
+  agent any
+  parameters {
+    booleanParam(name: 'InfraChange' , defaultValue: false ),
+	booleanParam(name: 'PacbotInstall' , defaultValue: false )
+  }
+  
+  stages {
+    stage('Build Infrastructure') {
+	    when {
+            expression { params.InfraChange == 'true' }
         }
+      steps {
+        echo 'Building your infrastructure'
+        sh 'terraform --version'
+        sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform/ && terraform init && terraform apply -lock=false -auto-approve'
+      }
     }
+    stage('Run pacbot Application') {
+       when {
+            expression { params.PacbotInstall == 'true' }
+        }
+      steps {
+        echo 'Running pacbot application installer file...'
+      }
+    }
+    stage('Re-deploy pacbot Application') {
+      steps {
+        echo 'Re-deploy pacbot application application....'
+      }
+    }  
+	  
+  }
 }
