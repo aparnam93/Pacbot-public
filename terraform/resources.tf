@@ -4,7 +4,7 @@ resource "aws_instance" "pacbot_server" {
    key_name = "${var.key-pair}"
    subnet_id = "${var.subnetId}"
    vpc_security_group_ids = ["${aws_security_group.sgweb.id}"]
-   iam_instance_profile = "${aws_iam_instance_profile.pacbot_ec2_instance_profile.name}"
+   iam_instance_profile = "${aws_iam_instance_profile.pacbot_ec2_instance_profile_jenkins.name}"
    user_data = "${file("userdata.sh")}"
    tags = {
     Name = "${var.hostname_tag}"
