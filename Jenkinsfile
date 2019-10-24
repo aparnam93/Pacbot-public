@@ -6,7 +6,6 @@ pipeline {
             description: '',
             name: 'REQUESTED_ACTION')
     }
-
     stages {
         stage ('Speak') {
             when {
