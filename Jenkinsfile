@@ -2,7 +2,7 @@ pipeline {
   agent any
   parameters {
     booleanParam(name: 'InfraChange' , defaultValue: false )
-	booleanParam(name: 'PacbotInstall' , defaultValue: false )
+    booleanParam(name: 'PacbotInstall' , defaultValue: false )
   }
   
   stages {
@@ -22,7 +22,7 @@ pipeline {
        }
        steps {
             echo 'Running pacbot application installer file...'
-			sh 'ssh -i /home/ec2-user/key.pem ec2-user@172.26.10.190 "sudo su && python3 /opt/pacbot/installer/manager.py status"'
+	    sh 'ssh -i /home/ec2-user/key.pem ec2-user@172.26.10.190 "sudo su && python3 /opt/pacbot/installer/manager.py status"'
        }
     }
     stage('Re-deploy pacbot Application') {
