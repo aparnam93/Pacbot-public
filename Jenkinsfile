@@ -1,11 +1,20 @@
 pipeline {
     agent any
+    parameters {
+        choice(
+            choices: ['greeting' , 'silence'],
+            description: '',
+            name: 'REQUESTED_ACTION')
+    }
+
     stages {
-        stage('Build Infrastructure') {
+        stage ('Speak') {
+            when {
+                // Only say hello if a "greeting" is requested
+                expression { params.REQUESTED_ACTION == 'greeting' }
+            }
             steps {
-                 echo 'Building your infrastructure'
-                 sh 'terraform --version'
-                 sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/terraform/ && terraform init && terraform apply -lock=false -auto-approve'
+                echo "Hello, bitwiseman!"
             }
         }
     }
