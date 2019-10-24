@@ -1,14 +1,7 @@
 pipeline {
     agent any
-    parameters {
-        booleanParam(name: 'InfraChange' , defaultValue: false )
-    }
-  
     stages {
         stage('Build Infrastructure') {
-	        when {
-                expression { params.InfraChange == 'true' }
-            }
             steps {
                  echo 'Building your infrastructure'
                  sh 'terraform --version'
