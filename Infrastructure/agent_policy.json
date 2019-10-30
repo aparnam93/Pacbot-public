@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1571402648437",
+      "Action": [
+        "rds:*",
+        "s3:*",
+        "redshift:*",
+        "logs:*",
+        "elasticloadbalancing:*",
+        "iam:*",
+        "es:*",
+        "batch:*",
+        "cloudwatch:*",
+        "lambda:*",
+        "ecs:*",
+        "ec2:*",
+        "ecr:*",
+        "events:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
