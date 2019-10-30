@@ -15,7 +15,7 @@ variable "SysName_tag" {
   default = "PacBot"
 }
 variable "vpc_subnet_id" {
-  default = "subnet-b28a83f9"
+  default = "subnet-00f6241c98bc8a331"
 }
 variable "linux_base_ami" {
   default = "ami-0ca877ece91b62785"
