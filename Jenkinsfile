@@ -14,7 +14,8 @@ pipeline {
       steps {
         echo 'Building your infrastructure'
         sh 'terraform --version'
-	      sh 'cd ${terrformPath} && terraform init && terraform apply -lock=false -auto-approve'
+	    sh 'cd ${terrformPath} && terraform init && terraform apply -lock=false -auto-approve'
+		sh 'cd ${terrformPath} && terraform output instance_id'
       }
     }
     stage('Check pacbot installer server status') {
@@ -23,7 +24,7 @@ pipeline {
         }
        steps {
             echo 'Checking the status of pacbot installer server...'
-			sh 'cd ${terrformPath} && sudo ./InstanceState.sh'
+			sh 'cd ${terrformPath} && sudo bash -x InstanceState.sh'
        }
     }
     stage('Re-deploy pacbot Application') {
