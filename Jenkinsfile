@@ -14,7 +14,7 @@ pipeline {
       steps {
         echo 'Building your infrastructure'
         sh 'terraform --version'
-	sh 'cd ${params.terraformPath} && terraform init && terraform apply -lock=false -auto-approve'
+	sh 'cd params.terrformPath && terraform init && terraform apply -lock=false -auto-approve'
       }
     }
     stage('Run pacbot Application') {
