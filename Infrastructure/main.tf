@@ -5,6 +5,11 @@ terraform {
     region = "us-east-1"
   }
 }
+terraform {
+  backend "local" {
+    path = "/var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure/terraform.tfstate"
+  }
+}
 provider "aws" {
   region = "${var.region}"
 }
