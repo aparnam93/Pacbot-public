@@ -18,7 +18,7 @@ variable "vpc_subnet_id" {
   default = "subnet-00f6241c98bc8a331"
 }
 variable "linux_base_ami" {
-  default = "ami-0ca877ece91b62785"
+  default = "ami-0b69ea66ff7391e80"
 }
 
 variable "ssh_key_name" {
