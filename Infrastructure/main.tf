@@ -41,5 +41,5 @@ module "pacbot_installer_Server" {
   tsm = "${var.tsm}"
   Scheduler = "${var.Scheduler}"
   PatchGroup = "${var.PatchGroup}"
-  instance_profile = "${module.Jenkins_ec2_role.ec2_instance_profile}"
+  instance_profile = "${module.Pacbot_ec2_role.ec2_instance_profile}"
 }
