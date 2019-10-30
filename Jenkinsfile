@@ -23,6 +23,7 @@ pipeline {
         }
        steps {
             echo 'Checking the status of pacbot installer server...'
+			sh 'cd ${terrformPath} && ./InstanceState.sh'
        }
     }
     stage('Re-deploy pacbot Application') {
