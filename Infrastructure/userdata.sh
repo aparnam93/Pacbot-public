@@ -14,7 +14,7 @@ source ~/.bashrc
 
 #Clone Repo
 
-git clone -b "${var.branch_name}" https://ritscm.regeneron.com/scm/dcce/pacbot1.0.git
+git clone -b "development" https://ritscm.regeneron.com/scm/dcce/pacbot1.0.git
 
 #Other Prereqs
 yum -y install java-1.8.0-openjdk docker maven unzip mysql
