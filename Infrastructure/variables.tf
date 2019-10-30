@@ -4,17 +4,58 @@ variable "region" {
 variable "ec2_iam_role_name" {
   default = "packbot-server-ec2-role"
 }
-variable "regn_ssm_managed_role" {
-  default = "arn:aws:iam::703834445914:policy/regn-cld-ssm-managed-instance-role-policy"
-}
 variable "vpc_id" {
   default = "vpc-07f81c6ecd24526e8"
 }
 variable "ssh_source_cidr_block" {
   type    = "list"
-  default = ["14.98.18.98/16"]
+  default = ["172.16.0.0/12", "10.0.0.0/8"]
 }
 variable "SysName_tag" {
   default = "PacBot"
 }
+variable "vpc_subnet_id" {
+  default = "subnet-b28a83f9"
+}
+variable "linux_base_ami" {
+  default = "ami-0ca877ece91b62785"
+}
 
+variable "ssh_key_name" {
+  default = "pacbot-application"
+}
+variable "instance_type" {
+  default = "t2.medium"
+}
+# EC2 Tags
+variable "BusinessUnit" {
+  default = "GNA"
+}
+variable "tsm" {
+  default = "aparna.manjunath@regeneron.com"
+}
+variable "CostCenter" {
+  default = "0512"
+}
+variable "Department" {
+  default = "ISnT - Cloud Services"
+}
+variable "Environment" {
+  default = "DEV"
+}
+variable "Scheduler" {
+  default = "S-C-US-NT18A-OD"
+}
+variable "PatchGroup" {
+ default = "cat3"
+}
+variable "SysOwner" {
+  default = "aparna.manjunath@regeneron.com"
+}
+variable "SysName" {
+  default = "PacBot"
+}
+#Hostname
+variable "hostname_tag" {
+  default = "Pacbot-Installer"
+}
