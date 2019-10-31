@@ -50,7 +50,7 @@ variable "PatchGroup" {
  default = "cat3"
 }
 variable "SysOwner" {
-  default = "aparna.manjunath@regeneron.com"
+  default = "rakesh.singh@regeneron.com"
 }
 variable "SysName" {
   default = "PacBot"
