@@ -26,7 +26,7 @@ pipeline {
        steps {
             echo 'Checking the status of pacbot installer server...'
 	    sh 'cd ${terrformPath} && sudo bash -x InstanceState.sh'
-	    sh 'whoami'
+	    
 	    
        }
     }
