@@ -10,17 +10,7 @@ VPC = {
 # CUstom tags that can be defined by user
 CUSTOM_RESOURCE_TAGS = [
     {'Application': "PacBot"},
-    {'Environment': "Dev"},
-    {'Name': "Pacbot"},
-    {'SysName': "Pacbot"},
-    {'Scheduler': ""},
-    {'Backup': "Backup"},
-    {'Monitoring': "Null"},
-    {'SSMManged': "False"},
-    {'Patch Group': "False"},
-    {'TSM': "aparna.manjunath@regeneron.com"},
-    {'SysOwner': "aparna.manjunath@regeneron.com"},
-    {'CostCenter': "0512"}
+    {'Environment': "Prod"}
 ]
 
 
@@ -33,23 +23,23 @@ ES_INSTANCE_TYPE = "m4.large.elasticsearch"  # Possibble values m4.xlarge.elasti
 ES_VOLUME_SIZE = 20
 
 # ALB related configurations
-MAKE_ALB_INTERNAL = False  # False if ALB need to be public(internet facing) else True
+MAKE_ALB_INTERNAL = True  # False if ALB need to be public(internet facing) else True
 ALB_PROTOCOL = "HTTP"
 SSL_CERTIFICATE_ARN = ""  # Required only if ALB_PROTOCOL is defined as HTTPS
 PACBOT_DOMAIN = ""  # Required only if you point a CNAME record to ALB ex: app.pacbot.com
 
 
 # MAIL Server configuration
-MAIL_SERVER = "localhost"
+MAIL_SERVER = "email-smtp.us-east-1.amazonaws.com"
 MAIL_SERVER_PORT = 587
 MAIL_PROTOCOL = "smtp"
-MAIL_SERVER_USER = ""
-MAIL_SERVER_PWD = ""
+MAIL_SERVER_USER = "AKIAT3YMBRJXQMOJ4KVM"
+MAIL_SERVER_PWD = "BFGvjtvYNfxjmW+CoRpyQ9ZXupNvJJbOXi0ESU4k8Mmb"
 MAIL_SMTP_AUTH = ""
 MAIL_SMTP_SSL_ENABLE = "true"
 MAIL_SMTP_SSL_TEST_CONNECTION = "false"
 
-USER_EMAIL_ID = "Rakesh.Singh@regenron.com,Priyanka.Sharma@regeneron.com,Aparna.manjunath@regeneron.com"
+USER_EMAIL_ID = ""
 
 # System reads below data from user if not updated here
 AWS_ACCESS_KEY = ""

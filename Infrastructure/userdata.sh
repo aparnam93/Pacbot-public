@@ -30,7 +30,7 @@ cd /opt/Pacbot-public/webapp
 sudo yum install nodejs npm -y
 npm install -g @angular/cli@1.6.8
 sudo npm install -g bower
-sudo npm install yarn
+sudo npm install -g yarn
 sudo npm install
 sudo bower install
 bower install --allow-root
