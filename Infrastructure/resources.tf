@@ -44,7 +44,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "pacbot_instance_profile" {
-  name = "pacbot_instance_profile"
+  name = "pacbot_instance_profile_dev"
   role = "${aws_iam_role.pacbot_server_role.name}"
 }
 resource "aws_iam_role_policy" "pacbot_server_policy" {
