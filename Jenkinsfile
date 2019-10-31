@@ -27,8 +27,7 @@ pipeline {
             echo 'Checking the status of pacbot installer server...'
 	    sh 'cd ${terrformPath} && sudo bash -x InstanceState.sh'
 	    sh 'whoami'
-	    sh 'instance_id=$(cd /var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure && terraform output instance_id)'
-	    sh 'ssh -i /root/keys/key.pem ec2-user@${instance_id}'
+	    
        }
     }
     stage('Re-deploy pacbot Application') {
