@@ -20,4 +20,6 @@ done
 
 sudo su 
 terraform --version
+cd /home/ec2-user/
+cat pacbot.txt
 aws ec2 stop-instances --instance-ids $instance_id --region us-east-1;
