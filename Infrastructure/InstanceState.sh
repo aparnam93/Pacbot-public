@@ -14,7 +14,7 @@ done
 if [[ $(aws ec2 describe-instances --instance-ids $instance_id --query 'Reservations[].Instances[].State[].Name' --region us-east-1 --output text) = "stopped" ]] ; then \
     aws ec2 start-instances --instance-ids $instance_id --region us-east-1; \
 fi
-until (ssh -T -i /var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure/key.pem ec2-user@$instance_ip); do
+until (ssh -i /var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure/key.pem ec2-user@$instance_ip); do
     sleep 5
 done
 
