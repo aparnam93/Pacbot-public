@@ -16,7 +16,7 @@ pipeline {
         sh 'terraform --version'
 	sh 'cd ${terrformPath} && terraform init && terraform apply -lock=false -auto-approve'
 	sh 'pwd'
-	sh 'terraform output instance_id'
+	sh 'cd /var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure && terraform output instance_id'
       }
     }
     stage('Check pacbot installer server status') {
