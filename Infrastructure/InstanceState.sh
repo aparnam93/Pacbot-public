@@ -14,7 +14,7 @@ done
 if [[ $(aws ec2 describe-instances --instance-ids $instance_id --query 'Reservations[].Instances[].State[].Name' --region us-east-1 --output text) = "stopped" ]] ; then \
     aws ec2 start-instances --instance-ids $instance_id --region us-east-1; \
 fi
-ssh -i /var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure/key.pem ec2-user@$instance_ip
+ssh -T -R -i /var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure/key.pem ec2-user@$instance_ip
 sudo su 
 cd /home/ec2-user && cat pacbot.txt
 terraform --version
