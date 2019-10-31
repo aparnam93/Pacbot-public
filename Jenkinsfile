@@ -15,7 +15,8 @@ pipeline {
         echo 'Building your infrastructure'
         sh 'terraform --version'
 	sh 'cd ${terrformPath} && terraform init && terraform apply -lock=false -auto-approve'
-		sh 'cd ${terrformPath} && terraform output instance_id'
+	sh 'pwd'
+	sh 'terraform output instance_id'
       }
     }
     stage('Check pacbot installer server status') {
