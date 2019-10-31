@@ -1,10 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket = "regn-tf-state-tst"
-    key = "us-east-1/pacbot/packbot_jenkins.tfstate"
-    region = "us-east-1"
-  }
-}
 provider "aws" {
   region = "${var.region}"
 }
