@@ -13,7 +13,7 @@ pipeline {
         }
       steps {
         echo 'Building your infrastructure'
-	echo 'git branch'
+	sh 'git branch'
         sh 'terraform --version'
 	/*sh 'cd ${terrformPath} && terraform init && terraform destroy -lock=false -auto-approve'*/
 	sh 'pwd'
