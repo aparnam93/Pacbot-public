@@ -17,7 +17,7 @@ resource "aws_instance" "instance" {
   }
   subnet_id = "${var.vpc_subnet_id}"
   vpc_security_group_ids = ["${var.sec_grp_id}"]
-  key_name = ["${var.ssh_key_name}"]
+  key_name = "${var.ssh_key_name}"
 }
 
 output "instance_availability_zone" {
