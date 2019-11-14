@@ -9,11 +9,11 @@ pipeline {
   stages {
     stage('Build Infrastructure') {
 	    when {
-                branch 'development'
-            }
+            expression { params.InfraChange == true }
+        }
       steps {
         echo 'Building your infrastructure'
-	echo $GIT_BRANCH
+	echo $branch
         sh 'terraform --version'
 	/*sh 'cd ${terrformPath} && terraform init && terraform destroy -lock=false -auto-approve'*/
 	sh 'pwd'
