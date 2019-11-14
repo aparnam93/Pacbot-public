@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('Build Infrastructure') {
 	    when {
-            expression { params.InfraChange == true }
-        }
+                branch 'development'
+            }
       steps {
         echo 'Building your infrastructure'
 	echo $GIT_BRANCH
