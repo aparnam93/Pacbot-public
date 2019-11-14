@@ -11,8 +11,8 @@ variable "ssh_source_cidr_block" {
 variable "vpc_subnet_id" {
   default = "subnet-b28a83f9"
 }
-variable "linux_base_ami" {
-  default = "ami-00dc79254d0461090"
+variable "rhel_base_ami" {
+  default = "ami-0ca877ece91b62785"
 }
 variable "SysName_tag" {
   default = "PacBot"
@@ -26,16 +26,21 @@ variable "instance_type" {
 variable "ec2_iam_role_name" {
   default = "packbot-jenkins-ec2-role"
 }
-#variable "regn_ssm_managed_role" {
-#  default = "arn:aws:iam::703834445914:policy/regn-cld-ssm-managed-instance-role-policy"
-#}
-
+variable "regn_ssm_managed_role" {
+  default = "arn:aws:iam::703834445914:policy/regn-cld-ssm-managed-instance-role-policy"
+}
+variable "root_vol_size" {
+  default = "100"
+}
+variable "root_vol_type" {
+  default = "standard"
+}
 # EC2 Tags
 variable "BusinessUnit" {
   default = "GNA"
 }
 variable "tsm" {
-  default = "aparna.m@regeneron.com"
+  default = "sanjay.sreeram1@regeneron.com"
 }
 variable "CostCenter" {
   default = "0512"
@@ -60,7 +65,7 @@ variable "SysName" {
 }
 #Hostname
 variable "hostname_tag" {
-  default = "pacbotapplication"
+  default = "AUSLAJNKNS01D"
 }
 # secondary ebs vol specs
 variable "non_root_volume_type" {
@@ -74,8 +79,24 @@ variable "non_root_volume_type" {
 #}
 #### "AUSLAJNKNS01D" specific variables
 variable "hostname_tag_hf" {
-  default = "pacbotapplication"
+  default = "AUSLAJNKNS01D"
 }
 variable "instance_type_hf" {
   default = "t3.large"
+}
+variable "root_vol_size_hf" {
+  default = "100"
+}
+variable "root_vol_type_hf" {
+  default = "standard"
+}
+# secondary ebs vol specs
+variable "non_root_volume_type_hf" {
+  default = "standard"
+}
+variable "non_root_volume_size_hf" {
+  default = "500"
+}
+variable "non_root_vol_device_name_hf" {
+  default = "/dev/sdf"
 }

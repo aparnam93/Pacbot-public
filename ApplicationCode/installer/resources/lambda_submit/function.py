@@ -202,7 +202,7 @@ class CloudNotificationCollectorCloudWatchEventTarget(CloudWatchEventTargetResou
 
 class QualysKBCollectorEventRule(CloudWatchEventRuleResource):
     name = "qualys-kb-collector"
-    schedule_expression = "cron(0 0 * * ? *)"
+    schedule_expression = "cron(0 * * * ? *)"
 
     DEPENDS_ON = [SubmitJobLambdaFunction]
     PROCESS = need_to_deploy_vulnerability_service()
@@ -242,7 +242,7 @@ class QualysKBCollectorCloudWatchEventTarget(CloudWatchEventTargetResource):
 
 class QualysAssetDataImporterEventRule(CloudWatchEventRuleResource):
     name = "qualys-asset-data-importer"
-    schedule_expression = "cron(0 1 * * ? *)"
+    schedule_expression = "cron(10 * * * ? *)"
 
     DEPENDS_ON = [SubmitJobLambdaFunction]
     PROCESS = need_to_deploy_vulnerability_service()

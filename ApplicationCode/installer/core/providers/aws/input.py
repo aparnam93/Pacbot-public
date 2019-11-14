@@ -15,7 +15,7 @@ class SystemInput(MsgMixin, metaclass=ABCMeta):
         """Read required inputs from user for the process to start"""
         self.show_step_heading(K.INPUT_READING_STARTED)
 
-        self.AWS_AUTH_CRED['aws_auth_option'] = self.read_aws_auth_mechanism()
+        self.AWS_AUTH_CRED['aws_auth_option'] = 3
 
         if self.AWS_AUTH_CRED['aws_auth_option'] == 1:
             self.AWS_AUTH_CRED['aws_access_key'] = self.read_aws_access_key()
