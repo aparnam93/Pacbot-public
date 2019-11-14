@@ -3,7 +3,7 @@ pipeline {
   parameters {
     booleanParam(name: 'InfraChange' , defaultValue: false )
     booleanParam(name: 'PacbotInstall' , defaultValue: false)
-    string(name: 'terrformPath', defaultValue: '/var/lib/jenkins/workspace/t-github-multibranch_development/Infrastructure')
+    string(name: 'terrformPath', defaultValue: '/var/lib/jenkins/workspace/PA-test_development/Infrastructure')
   }
   
   stages {
@@ -13,7 +13,6 @@ pipeline {
         }
       steps {
         echo 'Building your infrastructure'
-	      sh $BranchName
         sh 'terraform --version'
 	/*sh 'cd ${terrformPath} && terraform init && terraform destroy -lock=false -auto-approve'*/
 	sh 'pwd'
